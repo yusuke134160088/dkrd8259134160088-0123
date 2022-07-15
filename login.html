@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta name="robots" content="noindex" />
+    <meta charset="utf-8">
+    <title>ゆうすけ共和国ホームページへログイン</title>
+  </head>
+  <body>
+    <script type="text/javascript"><!--
+function myEnter(){
+  myID=prompt("IDを入力してください。","");
+   myPassWord=prompt("パスワードを入力してください。","");
+   if ( myPassWord == "134160088"&& myID == "yusuke"){
+      location.href = "index.html";
+   }else{
+      alert( "IDかパスワードが違います!" );
+   }
+}
+// --></script>
+
+<form>
+<input type="button" value="ゆうすけ共和国ホームページへログイン" class="button is-primary is-large" onclick="myEnter()">
+</form>
+  <script type="text/javascript"><!--
+function myEnter1(){
+myID=prompt("管理者IDを入力してください。","");
+ myPassWord=prompt("管理者パスワードを入力してください。","");
+ if ( myPassWord == "dkrd8259"&& myID == "yusuke134160088"){
+    location.href = "idkakunin.html";
+ }else{
+    alert( "IDかパスワードが違います!" );
+ }
+}
+// --></script>
+<p></p>
+<form>
+<input type="button" value="ログインIDとパスワードを忘れた場合" class="button is-primary is-large" onclick="myEnter1()">
+</form>
+</body>
+</html>
