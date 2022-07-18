@@ -1,0 +1,114 @@
+.accordion {
+  width: 100%;
+}
+
+/* inputのチェックボックスを非表示 */
+.accordion-hidden {
+  display: none;
+}
+
+/* 見出しボタン部分 */
+.accordion-open {
+  display: block;
+  padding: 10px 80px 10px 10px;
+  background: #62c9c7;
+  cursor: pointer;
+  margin: 5px 0;
+  position: relative;
+}
+
+/* ＋アイコン */
+.accordion-open::before,
+.accordion-open::after {
+  content: '';
+  width: 20px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+/* アイコンのー */
+.accordion-open::after {
+  transform: translateY(-50%) rotate(90deg);
+  transition: .5s;
+}
+
+/* アコーディオンが開いたらーに */
+.accordion-hidden:checked+.accordion-open:after {
+  transform: translateY(-50%) rotate(0);
+}
+
+/* アコーディオン中身部分 */
+.accordion-inner {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  /* 表示速度の設定 */
+  cursor: pointer;
+}
+
+/* チェックボックスにチェックが入ったら中身部分を表示する */
+.accordion-hidden:checked+.accordion-open+.accordion-inner {
+  height: auto;
+  opacity: 1;
+  padding: 10px;
+}
+/* ↑ここまで共通 */
+
+
+/* Q&A追加 */
+.accordion_qa .Q,
+.accordion_qa .A {
+  position: relative;
+}
+
+.accordion_qa .Q::before,
+.accordion_qa .A::before {
+  font-size: 1.5em;
+  display: block;
+  position: absolute;
+  top: -.6em;
+  left: -1.3em;
+}
+
+.accordion_qa .Q::before {
+  content: 'Q.';
+}
+
+.accordion_qa .A::before {
+  content: 'A.';
+}
+
+.accordion_qa .accordion-open {
+  padding-left: 2.5em;
+}
+
+.accordion_qa .accordion-hidden:checked+.accordion-open+.accordion-inner {
+  height: auto;
+  opacity: 1;
+  padding: 10px 10px 10px 2.5em;
+}
+/* Q&A追加ここまで */
+
+
+/* 中にいろいろ入れたいとき */
+.accordion-box {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  transition: 1s;
+}
+
+.accordion-hidden:checked+.accordion-open+.accordion-box {
+  height: auto;
+  opacity: 1;
+  padding: 10px;
+}
